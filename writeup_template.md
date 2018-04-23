@@ -35,7 +35,7 @@ The results on the test images are given below (note: OpenCV uses reverse RGB ch
 ![alt text][image1]
 
 Result on video:
-[![solidWhiteRight](https://img.youtube.com/vi/0.jpg)](https://www.youtube.com/watch?v=OY2Jn0kOYJw)
+[![solidWhiteRight](https://img.youtube.com/vi/OY2Jn0kOYJw/0.jpg)](https://www.youtube.com/watch?v=OY2Jn0kOYJw)
 
 ### 2. Potential shortcomings with current pipeline
 
