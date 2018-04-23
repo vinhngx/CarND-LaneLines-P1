@@ -30,10 +30,15 @@ My pipeline consisted of 8 steps.
 7. Next, apply a linear regression separately on each lane to consolidate the lines in to a single line. 
 8. Calculate the co-ordinate of 2 points on the consolidated line for each lane. Draw the lines and super-impose on the original image.
 
-The results on the test images are given below:
+The results on the test images are given below (note: OpenCV uses reverse RGB channel representation):
 
 ![alt text][image1]
 
+Result on video:
+<video id="video1" class="video-js vjs-default-skin" controls
+preload="auto" width="960" height="540" data-setup="{}">
+<source src="/test_videos_output/solidWhiteRight.mp4" type='video/mp4'>
+</video>
 
 ### 2. Potential shortcomings with current pipeline
 
