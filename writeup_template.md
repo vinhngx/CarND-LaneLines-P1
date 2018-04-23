@@ -1,9 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Finding Lane Lines on the Road**
@@ -15,33 +11,36 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidWhiteCurve.jpg "solidWhiteCurve.jpg"
 
 ---
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. 
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 8 steps. 
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+1. Convert the images to grayscale
+2. Apply a slight Gaussian blur with kernel size of 5
+3. Apply Canny edge detection of low and high threshold of 50 and 150. This setting was obtained from the lecture quiz, and works well on the given images and videos.
+4. Next, apply a region of interest that is determined emperically based on the fix vantage point of the camera lens. 
+5. Apply Hough transform to find lines within the region of interest. After this step, we've got a set of lines that potentially mark the left and right lanes
+6. Sort the lines into left or right lane based on their slopes: negative for left, rest for right.
+7. Next, apply a linear regression separately on each lane to consolidate the lines in to a single line. 
+8. Calculate the co-ordinate of 2 points on the consolidated line for each lane. Draw the lines and super-impose on the original image.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+The results on the test images are given below:
 
 ![alt text][image1]
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings with current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+1. Many parameters set by hand and empirical experiments, e.g. Canny params, Hough transform params, not so much of automated learning from data.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+1. Apply machine learning to learn parameter automatically, but this requires labelled data.
 
-Another potential improvement could be to ...
