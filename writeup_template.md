@@ -35,11 +35,7 @@ The results on the test images are given below (note: OpenCV uses reverse RGB ch
 ![alt text][image1]
 
 Result on video:
-<script src="http://vjs.zencdn.net/4.0/video.js"></script>
-<video id="video1" class="video-js vjs-default-skin" controls
-preload="auto" width="960" height="540" data-setup="{}">
-<source src="/test_videos_output/solidWhiteRight.mp4" type='video/mp4'>
-</video>
+[![solidWhiteRight](https://img.youtube.com/vi/0.jpg)](https://www.youtube.com/watch?v=OY2Jn0kOYJw)
 
 ### 2. Potential shortcomings with current pipeline
 
